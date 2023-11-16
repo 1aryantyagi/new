@@ -1,0 +1,139 @@
+<html>
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Rubik:wght@400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="{{url_for('static', filename = 'styles.css')}}">
+</head>
+
+<body>
+    <div class="container">
+        <form action="{{ url_for('predict')}}" method="post">
+            <h1>
+                <legend>Movie Collection Preduction</legend>
+            </h1>
+            <div class="grid">
+
+
+                <div>
+                    <label class="form-label">Marketing_expense</label>
+                    <input class="form-control" type="number" step="0.01" name="Marketing_expense" />
+                </div>
+
+                <div>
+                    <label class="form-label">Production_expense</label>
+                    <input class="form-control" type="number" step="0.01" name="Production_expense" />
+                </div>
+
+                <div>
+                    <label class="form-label">Multiplex_coverage</label>
+                    <input class="form-control" type="number" step="0.01" name="Multiplex_coverage" />
+                </div>
+
+                <div>
+                    <label class="form-label">Budget</label>
+                    <input class="form-control" type="number" step="0.01" name="Budget" />
+                </div>
+
+                <div>
+                    <label class="form-label">Movie_length</label>
+                    <input class="form-control" type="number" step="0.01" name="Movie_length" />
+                </div>
+
+                <div>
+                    <label class="form-label">Lead_Actor_Rating</label>
+                    <input class="form-control" type="number" step="0.01" name="Lead_Actor_Rating" />
+                </div>
+
+                <div>
+                    <label class="form-label">Lead_Actress_rating</label>
+                    <input class="form-control" type="number" step="0.01" name="Lead_Actress_rating" />
+                </div>
+                <div>
+                    <label class="form-label">Director_rating</label>
+                    <input class="form-control" type="number" step="0.01" name="Director_rating" />
+                </div>
+                <div>
+                    <label class="form-label">Producer_rating</label>
+                    <input class="form-control" type="number" step="0.01" name="Producer_rating" />
+                </div>
+
+                <div>
+                    <label class="form-label">Critic_rating</label>
+                    <input class="form-control" type="number" step="0.01" name="Critic_rating" />
+                </div>
+
+                <div>
+                    <label class="form-label">Trailer_views</label>
+                    <input class="form-control" type="number" step="0.01" name="Trailer_views" />
+                </div>
+
+                <div>
+                    <label class="form-label">Time_taken</label>
+                    <input class="form-control" type="number" step="0.01" name="Time_taken" />
+                </div>
+                <div>
+                    <label class="form-label">Twitter_hastags</label>
+                    <input class="form-control" type="number" step="0.01" name="Twitter_hastags" />
+                </div>
+                <div>
+                    <label class="form-label">Avg_age_actors</label>
+                    <input class="form-control" type="number" step="0.01" name="Avg_age_actors" />
+                </div>
+                <div>
+                    <label class="form-label">Num_multiplex</label>
+                    <input class="form-control" type="number" step="0.01" name="Num_multiplex" />
+                </div>
+
+
+                <div>
+                    <label class="form-label">Genre</label>
+                    <select class="form-control" name="Genre" required>
+                        <option class="placeholder" selected disabled value="">Choose Genre</option>
+                        <option value="0">
+                            Thriller
+                        </option>
+                        <option value="1">
+                            Drama
+                        </option>
+                        <option value="2">
+                            Comedy
+                        </option>
+                        <option value="3">
+                            Action
+                        </option>
+                    </select>
+                </div>
+
+                <div>
+                    <label class="form-label">D3_available</label>
+                    <select class="form-control" name="D3_available" required>
+                        <option class="placeholder" selected disabled value="">Choose the response</option>
+                        <option value="0">
+                            NO
+                        </option>
+                        <option value="1">
+                            YES
+                        </option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="btn-container">
+                <input class="btn btn-primary" type="submit" value="PREDICT" required />
+            </div>
+
+        </form>
+        <div class="results-container">
+            <h2 class="results">
+                {{results}}
+            </h2>
+        </div>
+    </div>
+
+    <body>
+
+</html>

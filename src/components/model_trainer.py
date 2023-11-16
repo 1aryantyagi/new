@@ -5,6 +5,7 @@ from dataclasses import dataclass
 from sklearn.metrics import r2_score
 from sklearn.ensemble import RandomForestRegressor, GradientBoostingRegressor
 from xgboost import XGBRegressor
+import xgboost
 from catboost import CatBoostRegressor
 from lightgbm import LGBMRegressor
 
